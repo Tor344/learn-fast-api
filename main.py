@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 class Product(BaseModel):
@@ -25,4 +25,6 @@ def items(product: Product):
 
 @app.get("/items/{item_id}")
 def items(item_id: int, q: str | None = None):
+    if q == "105 OR 1=1":
+        raise HTTPException(status_code=401, detail="You are bad men")
     return {"item_id": item_id, "q": q}
