@@ -1,0 +1,13 @@
+### GET request to example server
+GET  http://127.0.0.1:8000
+
+###
+
+GET http://127.0.0.1:8000/hello
+###
+
+POST  http://127.0.0.1:8000/items
+Content-Type: application/json
+
+{"name": "air","price": 0}
+###
