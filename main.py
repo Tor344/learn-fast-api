@@ -1,7 +1,7 @@
 import asyncio
 from typing import Annotated
 
-from fastapi import FastAPI, HTTPException,Depends
+from fastapi import FastAPI, HTTPException,Depends,File,UploadFile
 from pydantic import BaseModel, Field
 from sqlmodel import Field as _Field
 from sqlmodel import  Session, SQLModel, create_engine
@@ -70,3 +70,8 @@ def user(session: SessionDep):
 async def slow():
     await asyncio.sleep(1)
     return {"message": "slow working"}
+
+
+@app.post("/upload/")
+def upload(file: Annotated[bytes, File()]):
+    return {"file": len(file)}
