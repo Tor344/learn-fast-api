@@ -1,9 +1,10 @@
+import asyncio
 from typing import Annotated
 
 from fastapi import FastAPI, HTTPException,Depends
 from pydantic import BaseModel, Field
 from sqlmodel import Field as _Field
-from sqlmodel import  Session, SQLModel, create_engine, select
+from sqlmodel import  Session, SQLModel, create_engine
 
 
 NAME_DB = "database.db"
@@ -64,3 +65,8 @@ def items(item_id: int, q: str | None = None):
 @app.get("/users/")
 def user(session: SessionDep):
     return {"massage": "connected"}
+
+@app.get("/slow/")
+async def slow():
+    await asyncio.sleep(1)
+    return {"message": "slow working"}
