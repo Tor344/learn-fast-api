@@ -7,6 +7,14 @@ jobs:
         steps:
           - name: list files
             run: ls -a
-          - uses: actions/checkout@v6
+        #   - uses: actions/checkout@v6
+          - name: cope file
+            run: |
+                  git init
+                  git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}github.com/$GITHUB_REPOSITORY.git"
+                  git fetch origin
+                  git checkout main 
+
+
           - name: list files thouth cope
             run: ls -a 
