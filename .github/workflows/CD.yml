@@ -20,8 +20,10 @@ jobs:
           script: |
             cd "learn-fast-api" 
             git pull
-            sudo systemctl restart learn-fast-api
-            
+            sudo systemctl stop learn-fast-api
+            sudo systemctl daemon-reload
+            sudo systemctl start learn-fast-api
+
 
 
       
