@@ -80,3 +80,8 @@ def upload(file: Annotated[bytes, File()]):
 @app.get("/CD_work")
 def cd_work():
     return {"message": "True"}
+
+
+@app.get("123")
+def user():
+    return {"123": "321"}
