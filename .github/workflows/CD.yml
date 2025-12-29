@@ -19,7 +19,7 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             ls
-            cd "$NAME_REPOSITORY" 
+            cd "learn-fast-api" 
             ls
 
       
