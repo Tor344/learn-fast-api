@@ -5,9 +5,19 @@ jobs:
   run-first-comand: 
     runs-on: ubuntu-latest
     steps:
-    - name: Display some Text
-      run: echo "some text"
-    - name: Comand 
+    - name: version node in ubunto
       run: | 
         node -v
-        npm -v
+  
+  run-parolel-comand:
+    runs-on: windows-latest
+    steps:
+      - name: version node in windows
+        run: node -v
+
+  run-second-comand: 
+    runs-on: macos-latest
+    needs: [run-first-comand]
+    steps:
+      - name: version node in macos
+        run: node -v
