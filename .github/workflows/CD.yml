@@ -3,6 +3,7 @@ on:
   push:
     branches: 
       - main
+      - feature/github-actions
 
 
 jobs:
@@ -16,5 +17,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
       - run: ls
-      
+
   
