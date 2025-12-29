@@ -1,0 +1,20 @@
+name: CD
+on:
+  push:
+    branches: 
+      - main
+
+
+jobs:
+  updata_project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conected to server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+      - run: ls
+      
+  
