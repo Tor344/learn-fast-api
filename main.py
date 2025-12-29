@@ -81,6 +81,6 @@ def upload(file: Annotated[bytes, File()]):
 def cd_work():
     return {"message": "True"}
 
-@app.get("how_are_you")
+@app.get("/how_are_you")
 def home():
     return {"message": "i am good"}
