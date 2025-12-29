@@ -1,6 +1,9 @@
 name: add repositorion
-on: [push]
-
+on: 
+  workflow_run: 
+    workflows: [First Workflow]
+    types:
+      - completed
 jobs: 
     run-cope:
         runs-on: ubuntu-22.04
