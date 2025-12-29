@@ -75,3 +75,8 @@ async def slow():
 @app.post("/upload/")
 def upload(file: Annotated[bytes, File()]):
     return {"file": len(file)}
+
+
+@app.get("/CD_work")
+def cd_work():
+    return {"message": "True"}

@@ -18,9 +18,11 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
-            ls
             cd "learn-fast-api" 
-            ls
+            git pull
+            sudo systemctl restart learn-fast-api
+            
+
 
       
 
