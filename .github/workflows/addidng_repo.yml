@@ -1,0 +1,12 @@
+name: add repositorion
+on: [push]
+
+jobs: 
+    run-cope:
+        runs-on: ubuntu-22.04
+        steps:
+          - name: list files
+            run: ls -a
+          - uses: actions/checkout@v6
+          - name: list files thouth cope
+            run: ls -a 
