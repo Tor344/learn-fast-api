@@ -8,7 +8,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 import pydantic
 from pydantic import BaseModel
 
-
+#print(Hello word)
 engine = create_async_engine("sqlite+aiosqlite:///datebase.db")
 
 new_session = async_sessionmaker(engine, expire_on_commit=False)
